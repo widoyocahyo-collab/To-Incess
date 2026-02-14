@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Princess 💖</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ff9ad5, #ff6ec7, #c084fc, #ff4da6);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            color: white;
+            animation: slideUp 1.5s ease;
+            z-index: 10;
+        }
+
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 35px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-top: 15px;
+            max-width: 500px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 30px;
+            background: white;
+            color: #ff4da6;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            background: #ffe6f2;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Love jatuh */
+        .heart {
+            position: absolute;
+            top: -10px;
+            font-size: 20px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Ganti foto.jpg dengan foto dia -->
+        <img src="foto 3.jpeg" alt="Foto Kamu" class="photo">
+
+        <h1>Tentang princess 💗</h1>
+
+        <p>
+            incess adalah alasan kenapa aku tersenyum tanpa alasan.  
+            Cantikmu bukan cuma dari luar, tapi dari caramu peduli,  
+            caramu tertawa, dan caramu membuat hidupku terasa lebih berarti.
+        </p>
+
+        <a href="halaman3.html" class="btn">Lanjut 💕</a>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "💖";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>

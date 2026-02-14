@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, sans-serif;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    color: #ff4d6d;
+}
+
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #e6004c;
+    transform: scale(1.1);
+}
+
+button:hover {
+    background: #e6004c;
+}
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    transform: rotate(45deg);
+    animation: fall 5s linear infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    left: -10px;
+    top: 0;
+}
+
+.heart2 {
+    left: 30%;
+    animation-duration: 7s;
+}
+
+.heart3 {
+    left: 70%;
+    animation-duration: 6s;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+    }
+    100% {
+        top: 110%;
+    }
+}
+

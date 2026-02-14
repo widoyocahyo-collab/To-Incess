@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? 💖</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(-45deg, #ff9ad5, #ff6ec7, #c084fc, #ff4da6);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            text-align: center;
+            color: white;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(20px);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 0 40px rgba(255,255,255,0.4);
+            z-index: 10;
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            position: relative;
+        }
+
+        button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        #yes {
+            background: white;
+            color: #ff4da6;
+        }
+
+        #yes:hover {
+            transform: scale(1.1);
+        }
+
+        #no {
+            background: #ff4da6;
+            color: white;
+            position: absolute;
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: white;
+            top: -10px;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Will You Be My Valentine? 💕</h1>
+
+        <div class="buttons">
+            <button id="yes">YES 💖</button>
+            <button id="no">NO 😜</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById("no");
+        const yesBtn = document.getElementById("yes");
+
+        // Tombol NO kabur
+        noBtn.addEventListener("mouseover", () => {
+            const x = Math.random() * (window.innerWidth - 100);
+            const y = Math.random() * (window.innerHeight - 50);
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        });
+
+        // Kalau YES ditekan
+        yesBtn.addEventListener("click", () => {
+            alert("yeyyy 💖 Aku Sayang incess nisa I Love Youuu 💕");
+
+            for (let i = 0; i < 100; i++) {
+                createConfetti();
+            }
+        });
+
+        function createConfetti() {
+            const confetti = document.createElement("div");
+            confetti.classList.add("confetti");
+
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.background = 
+                ["#fff", "#ff4da6", "#c084fc", "#ffe6f2"][Math.floor(Math.random() * 4)];
+
+            confetti.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            document.body.appendChild(confetti);
+
+            setTimeout(() => {
+                confetti.remove();
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
